@@ -74,7 +74,7 @@ const Services = () => {
                         emoji={Humble}
                         heading={"Android Developer"}
                         detail={
-                            "Flutter, Dart, etc..."
+                            "Flutter, Dart, Mobile application, etc..."
                         }
                         color="rgba(252, 166, 31, 0.45)"
                     />
