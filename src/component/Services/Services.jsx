@@ -64,6 +64,7 @@ const Services = () => {
                         detail={"Nodejs, Express, MongoDB, etc..."}
                     />
                 </motion.div>
+               
                 {/* 3rd */}
                 <motion.div
                     initial={{ top: "19rem", left: "25rem" }}
@@ -73,6 +74,20 @@ const Services = () => {
                     <Card
                         emoji={Humble}
                         heading={"Android Developer"}
+                        detail={
+                            "Flutter, Dart, Mobile application, etc..."
+                        }
+                        color="rgba(252, 166, 31, 0.45)"
+                    />
+                </motion.div>
+                <motion.div
+                    initial={{ top: "12rem", left: "25rem" }}
+                    whileInView={{ left: "30rem" }}
+                    transition={transition}
+                >
+                    <Card
+                        emoji={Humble}
+                        heading={"iOS Developer"}
                         detail={
                             "Flutter, Dart, Mobile application, etc..."
                         }

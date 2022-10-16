@@ -3,7 +3,12 @@ import "./Works.css";
 import Ezycerts from '../../img/Ezycerts.png'
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
+import Upwork from '../../img/Upwork.png'
+import Dipole from '../../img/dipole.png'
+import Freelancer from '../../img/freelance.png'
+
 import {Link} from 'react-scroll'
+
 const Works = () => {
   // context
   const theme = useContext(themeContext);
@@ -46,21 +51,24 @@ const Works = () => {
           transition={{ duration: 3.5, type: "spring" }}
           className="w-mainCircle"
         >
-          {/* <div className="w-secCircle">
+          <div className="w-secCircle">
             <img src={Upwork} alt="" />
           </div>
           <div className="w-secCircle">
-            <img src={Fiverr} alt="" />
-          </div> */}
-          <div style={{marginTop:'8.5rem'}} className="w-secCircle">
-            <a href="https://www.ezycerts.com/" target='_blank' rel='noreferrer'><img style={{width:"5rem"}} src={Ezycerts} alt="" /></a>
-          </div>{" "}
-          {/* <div className="w-secCircle">
-            <img src={Shopify} alt="" />
+            <a href="https://dipoletechi.com/" target='_blank' rel='noreferrer'><img style={{width:"5rem"}} src={Dipole} alt="Dipole tech" /></a>
+          </div>
+          <div className="w-secCircle" style={{color:"black"}}>
+            {/* <img src={Upwork} alt="" /> */}
+            <a href="https://www.codelength.net/" target='_blank' rel='noreferrer' style={{color:"black",textDecoration: 'none'}}>
+            Codelength.net
+            </a>
           </div>
           <div className="w-secCircle">
-            <img src={Facebook} alt="" />
-          </div> */}
+            <a href="https://www.ezycerts.com/" target='_blank' rel='noreferrer'><img style={{width:"5rem"}} src={Ezycerts} alt="Ezycerts" /></a>
+          </div>
+          <div className="w-secCircle">
+            <img src={Freelancer} style={{width:"100px",height:"50px"}} alt="" />
+          </div>
         </motion.div>
         {/* background Circles */}
         <div className="w-backCircle blueCircle"></div>
