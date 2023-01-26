@@ -65,7 +65,7 @@
 }
 
 .t-wrapper .swiper-pagination-bullet-active{
-    background: var(--orange);
+    background: var(--orange) !important;
 }
 
 @media screen and (max-width: 480px){
@@ -76,4 +76,8 @@
         width: 70px;
         height: 70px;
     }
+  }
+
+  .swiper-pagination-bullet {
+    background-color: aqua !important;
   }
