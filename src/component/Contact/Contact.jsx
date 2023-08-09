@@ -30,6 +30,7 @@ const Contact = () => {
             .then(
                 (result) => {
                     console.log(result.text);
+                    alert("Thanks for contacting us, I will get back to you as soon as possible.")
                     setDone(true);
                     form.reset();
                 },
