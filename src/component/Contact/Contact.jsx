@@ -5,22 +5,26 @@ import { themeContext } from "../../Context";
 const Contact = () => {
     const theme = useContext(themeContext);
     const darkMode = theme.state.darkMode;
-    const form = useRef();
-    const [done, setDone] = useState(false)
+    const [done, setDone] = useState(false);
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs
-            .sendForm(
+            .send(
                 "service_bu5nrkk",
                 "template_mpj43dj",
                 {
-                    from_name: form.user_name,
+                    from_name: form.name,
                     to_name: "Ravi Roy",
-                    from_email: form.user_email,
+                    from_email: form.email,
                     to_email: "ravi140398@gmail.com",
                     message: form.message,
-                  },
+                },
                 "j837Bq4gKodz-eXYz"
             )
             .then(
@@ -33,6 +37,16 @@ const Contact = () => {
                     console.log(error.text);
                 }
             );
+    };
+
+    const handleChange = (e) => {
+        const { target } = e;
+        const { name, value } = target;
+
+        setForm({
+            ...form,
+            [name]: value,
+        });
     };
 
     return (
@@ -53,10 +67,10 @@ const Contact = () => {
             </div>
             {/* right side form */}
             <div className="c-right">
-                <form ref={form} onSubmit={sendEmail}>
-                    <input type="text" name="user_name" className="user" placeholder="Name" />
-                    <input type="email" name="user_email" className="user" placeholder="Email" />
-                    <textarea name="message" className="user" placeholder="Message" />
+                <form onSubmit={sendEmail}>
+                    <input type="text" value={form.name} name="name" className="user" placeholder="Name" onChange={e => handleChange(e)} />
+                    <input type="email" name="email" value={form.email} className="user" placeholder="Email" onChange={e => handleChange(e)} />
+                    <textarea name="message" className="user" value={form.message} placeholder="Message" onChange={e => handleChange(e)} />
                     <input type="submit" value="Send" className="button" />
                     <div
                         className="blur c-blur1"
