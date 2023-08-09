@@ -67,11 +67,11 @@ const Contact = () => {
             </div>
             {/* right side form */}
             <div className="c-right">
-                <form onSubmit={sendEmail}>
+                <form >
                     <input type="text" value={form.name} name="name" className="user" placeholder="Name" onChange={e => handleChange(e)} />
                     <input type="email" name="email" value={form.email} className="user" placeholder="Email" onChange={e => handleChange(e)} />
                     <textarea name="message" className="user" value={form.message} placeholder="Message" onChange={e => handleChange(e)} />
-                    <input type="submit" value="Send" className="button" />
+                    <input type="submit" value="Send" className="button" onClick={sendEmail}/>
                     <div
                         className="blur c-blur1"
                         style={{ background: "var(--purple)" }}
