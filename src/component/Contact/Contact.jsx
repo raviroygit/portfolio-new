@@ -32,7 +32,11 @@ const Contact = () => {
                     console.log(result.text);
                     alert("Thanks for contacting us, I will get back to you as soon as possible.")
                     setDone(true);
-                    form.reset();
+                    setForm({
+                        name: "",
+                        email: "",
+                        message: "",
+                    });
                 },
                 (error) => {
                     console.log(error.text);
@@ -72,7 +76,7 @@ const Contact = () => {
                     <input type="text" value={form.name} name="name" className="user" placeholder="Name" onChange={e => handleChange(e)} />
                     <input type="email" name="email" value={form.email} className="user" placeholder="Email" onChange={e => handleChange(e)} />
                     <textarea name="message" className="user" value={form.message} placeholder="Message" onChange={e => handleChange(e)} />
-                    <input type="submit" value="Send" className="button" onClick={sendEmail}/>
+                    <input type="submit" value="Send" className="button" onClick={sendEmail} />
                     <div
                         className="blur c-blur1"
                         style={{ background: "var(--purple)" }}
