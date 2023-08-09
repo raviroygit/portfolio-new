@@ -14,7 +14,13 @@ const Contact = () => {
             .sendForm(
                 "service_bu5nrkk",
                 "template_mpj43dj",
-                form.current,
+                {
+                    from_name: form.user_name,
+                    to_name: "Ravi Roy",
+                    from_email: form.user_email,
+                    to_email: "ravi140398@gmail.com",
+                    message: form.message,
+                  },
                 "j837Bq4gKodz-eXYz"
             )
             .then(
